@@ -1,17 +1,17 @@
 {
-    "name": "moontoast/math",
+    "name": "terrafrost/math",
     "description": "A mathematics library, providing functionality for large numbers",
     "type": "library",
     "keywords": ["math", "bcmath"],
-    "homepage": "https://github.com/moontoast/math",
+    "homepage": "https://github.com/terrafrost/math",
     "license": "Apache-2.0",
     "support": {
-        "issues": "https://github.com/moontoast/math/issues",
-        "source": "https://github.com/moontoast/math"
+        "issues": "https://github.com/terrafrost/math/issues",
+        "source": "https://github.com/terrafrost/math"
     },
     "require": {
         "php": ">=5.3.3",
-        "ext-bcmath": "*"
+        "phpseclib/bcmath_compat": ">=1.0.0"
     },
     "autoload": {
         "psr-0": {"Moontoast\\Math": "src/"}
