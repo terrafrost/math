@@ -169,6 +169,6 @@ abstract class AbstractBigNumber implements BigNumberInterface
      */
     public static function setDefaultScale($scale)
     {
-        ini_set('bcmath.scale', $scale);
+        bcscale($scale);
     }
 }

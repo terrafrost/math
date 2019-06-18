@@ -229,9 +229,11 @@ class BigNumber extends AbstractBigNumber
     public function getScale()
     {
         if ($this->numberScale === null) {
+            if (version_compare(PHP_VERSION, '7.3.0') >= 0 || !extension_loaded('bcmath')) {
+                return bcscale();
+            }
             return ini_get('bcmath.scale');
         }
-
         return $this->numberScale;
     }
 
