@@ -11,7 +11,7 @@ class BigNumberImmutableImmutableTest extends TestCase
 {
     protected function setUp()
     {
-        ini_set('bcmath.scale', 0);
+        bcscale(0);
     }
 
     /**
@@ -49,7 +49,7 @@ class BigNumberImmutableImmutableTest extends TestCase
      */
     public function testWithScale()
     {
-        ini_set('bcmath.scale', 5);
+        bcscale(5);
 
         $bn = new BigNumberImmutable('9223372036854775808.12345');
 

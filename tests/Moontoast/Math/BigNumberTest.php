@@ -5,7 +5,7 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
-        ini_set('bcmath.scale', 0);
+        bcscale(0);
     }
 
     /**
@@ -753,7 +753,11 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
     {
         BigNumber::setDefaultScale(23);
 
-        $this->assertEquals(23, ini_get('bcmath.scale'));
+        $scale = version_compare(PHP_VERSION, '7.3.0') >= 0 || !extension_loaded('bcmath') ?
+            bcscale() :
+            ini_get('bcmath.scale');
+
+        $this->assertEquals(23, $scale);
     }
 
     /**
@@ -777,7 +781,7 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
     public function testConvertFromBase10AlwaysUsesZeroScale()
     {
         // Set global scale to 4; convertFromBase10() should not use this
-        ini_set('bcmath.scale', 4);
+        bcscale(4);
 
         $toBase = array(2, 8, 10, 16, 36);
         $convertValues = array(10, 27, 39, 037, 0x5F, '10', '27', '39');
@@ -799,7 +803,7 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
     public function testConvertToBase10AlwaysUsesZeroScale()
     {
         // Set global scale to 4; convertToBase10() should not use this
-        ini_set('bcmath.scale', 4);
+        bcscale(4);
 
         $fromBase = array(2, 8, 10, 16, 36);
         $convertValues = array(10, 27, 39, 037, 0x5F, '10', '27', '39', '5F', '5f', '3XYZ', '3xyz', '5f$@');
