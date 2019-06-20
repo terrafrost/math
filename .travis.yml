@@ -39,7 +39,6 @@ before_install:
         travis_wait phpenv install --force `php -r "echo PHP_VERSION;"`;
         phpenv rehash;
         phpenv global `php -r "echo PHP_VERSION;"`;
-        echo "bcmath should be disabled";
     fi
   - if [[ $TEST_COVERAGE != 'true' && "$(php --version | grep xdebug -ci)" -ge 1 ]]; then phpenv config-rm xdebug.ini ; fi
   - php -i | grep bcmath
