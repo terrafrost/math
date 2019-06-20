@@ -755,7 +755,7 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
 
         $scale = version_compare(PHP_VERSION, '7.3.0') >= 0 || !extension_loaded('bcmath') ?
             bcscale() :
-            ini_get('bcmath.scale');
+            max(0, strlen(bcadd('0', '0')) - 2);
 
         $this->assertEquals(23, $scale);
     }
