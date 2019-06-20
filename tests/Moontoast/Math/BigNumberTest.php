@@ -817,4 +817,15 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
             }
         }
     }
+
+    public function testBCScale()
+    {
+        BigNumber::setDefaultScale(2);
+        bcscale(0);
+
+        $bn = new BigNumber(5);
+        $decimal = preg_replace('#^5(?:\.)?#', '', $bn->getValue());
+
+        $this->assertEquals(strlen($decimal), $bn->getScale());
+    }
 }
