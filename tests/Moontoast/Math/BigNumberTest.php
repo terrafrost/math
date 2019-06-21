@@ -828,7 +828,8 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
 echo "\n" . $bn->getValue();
 echo "\n$decimal\n";
 echo strlen($decimal) . "\n";
-echo $bn->getScale() . "\n\n\n\n";
+echo $bn->getScale() . "\n";
+echo ini_get('bcmath.scale') . "\n\n\n\n";
 
         $this->assertEquals(strlen($decimal), $bn->getScale());
     }
