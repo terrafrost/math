@@ -641,4 +641,15 @@ class BigNumberImmutableImmutableTest extends TestCase
         static::assertSame(0, $SUT->getScale());
         static::assertSame("1", $SUT->getValue());
     }
+
+    public function testBCScale()
+    {
+        BigNumberImmutable::setDefaultScale(2);
+        bcscale(0);
+
+        $bn = new BigNumberImmutable(5);
+        $decimal = preg_replace('#^5(?:\.)?#', '', $bn->getValue());
+
+        $this->assertEquals(strlen($decimal), $bn->getScale());
+    }
 }
