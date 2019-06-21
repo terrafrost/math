@@ -825,6 +825,10 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
 
         $bn = new BigNumber(5);
         $decimal = preg_replace('#^5(?:\.)?#', '', $bn->getValue());
+echo "\n" . $bn->getValue();
+echo "\n$decimal\n";
+echo strlen($decimal) . "\n";
+echo $bn->getScale() . "\n\n\n\n";
 
         $this->assertEquals(strlen($decimal), $bn->getScale());
     }
