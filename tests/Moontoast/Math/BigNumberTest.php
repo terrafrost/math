@@ -822,6 +822,7 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
     {
         BigNumber::setDefaultScale(2);
         bcscale(0);
+echo "\n" . ini_get('bcmath.scale');
 
         $bn = new BigNumber(5);
         $decimal = preg_replace('#^5(?:\.)?#', '', $bn->getValue());
