@@ -642,6 +642,7 @@ class BigNumberImmutableImmutableTest extends TestCase
         static::assertSame("1", $SUT->getValue());
     }
 
+/*
     public function testBCScale()
     {
         BigNumberImmutable::setDefaultScale(2);
@@ -652,4 +653,5 @@ class BigNumberImmutableImmutableTest extends TestCase
 
         $this->assertEquals(strlen($decimal), $bn->getScale());
     }
+*/
 }
