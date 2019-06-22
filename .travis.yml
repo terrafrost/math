@@ -27,6 +27,14 @@ matrix:
     - php: 7.1
       env:
         - BCMATH="off"
+    - php: 7.2
+    - php: 7.2
+      env:
+        - BCMATH="off"
+    - php: 7.3
+    - php: 7.3
+      env:
+        - BCMATH="off"
     - php: nightly
 
 sudo: false
