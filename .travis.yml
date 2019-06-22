@@ -28,7 +28,6 @@ matrix:
       env:
         - BCMATH="off"
     - php: nightly
-    - php: hhvm
 
 sudo: false
 
