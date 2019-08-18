@@ -6,33 +6,47 @@ matrix:
     - php: nightly
   include:
     - php: 5.4
+      dist: precise
     - php: 5.4
+      dist: precise
       env:
         - BCMATH="off"
     - php: 5.5
+      dist: trusty
     - php: 5.5
+      dist: trusty
       env:
         - BCMATH="off"
     - php: 5.6
+      dist: xenial
     - php: 5.6
+      dist: xenial
       env:
         - BCMATH="off"
     - php: 7.0
+      dist: xenial
     - php: 7.0
+      dist: xenial
       env:
         - BCMATH="off"
     - php: 7.1
+      dist: xenial
       env:
         - TEST_COVERAGE=true
     - php: 7.1
+      dist: xenial
       env:
         - BCMATH="off"
     - php: 7.2
+      dist: xenial
     - php: 7.2
+      dist: xenial
       env:
         - BCMATH="off"
     - php: 7.3
+      dist: xenial
     - php: 7.3
+      dist: xenial
       env:
         - BCMATH="off"
     - php: nightly
