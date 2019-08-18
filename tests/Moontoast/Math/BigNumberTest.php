@@ -112,6 +112,10 @@ class BigNumberTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0, $bn2->compareTo(2147483647));
         $this->assertEquals(1, $bn1->compareTo($bn2));
         $this->assertEquals(-1, $bn2->compareTo($bn1));
+
+        $bn = new BigNumber('-0.0', 1);
+
+        $this->assertEquals(0, $bn->compareTo($bn));
     }
 
     /**

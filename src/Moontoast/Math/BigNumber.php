@@ -239,7 +239,9 @@ class BigNumber extends AbstractBigNumber
     {
         if ($this->numberScale === null) {
             if (version_compare(PHP_VERSION, '7.3.0') >= 0 || !extension_loaded('bcmath')) {
+                // @codeCoverageIgnoreStart
                 return (string) bcscale();
+                // @codeCoverageIgnoreEnd
             }
             return (string) max(0, strlen(bcadd('0', '0')) - 2);
         }
